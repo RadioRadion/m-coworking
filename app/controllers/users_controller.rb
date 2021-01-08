@@ -13,7 +13,6 @@ class UsersController < ApplicationController
   end
 
   def create_request
-    if @user.request == nil
-      Request.new()
   end
+
 end
