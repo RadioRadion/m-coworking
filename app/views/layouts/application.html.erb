@@ -1,7 +1,11 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>MCoworking</title>
+    <title>M-Coworking, votre espace de coworking nature à Bordeaux</title>
+    <meta name="description" content="M-Coworking, est un espace de coworking dédié aux professionnels freelance. Situé en plein coeur de Bordeaux,
+    M-Coworking assure à nos clients la meilleure configuration possible à nos clients pour exercer en toute tranquilité au milieu des plantes.
+    Nous mettons à disposition de nombreux services comme de la restauration bio et variée, un accès à des conférences
+    et meetups afin de renforcer vos compétences et votre réseau freelance. Vous pouvez vous inscrire via ce site internet en créant un compte">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -9,6 +13,8 @@
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
 
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload', defer: true %>
+
+    <%= favicon_link_tag asset_path('favicon.png') %>
   </head>
 
   <body>

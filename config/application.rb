@@ -12,6 +12,7 @@ module MCoworking
       generate.assets false
       generate.helper false
       generate.test_framework :test_unit, fixture: false
+      config.active_job.queue_adapter = :sidekiq
     end
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 6.0
@@ -21,4 +22,6 @@ module MCoworking
     # -- all .rb files in that directory are automatically loaded after loading
     # the framework and any gems in your application.
   end
+
+
 end
