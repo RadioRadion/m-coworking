@@ -8,4 +8,9 @@ class User < ApplicationRecord
 
   validates :biography, length: { maximum: 300 }
 
+  def after_confirmation
+    ContactMailer.contact(self).deliver_now
+  end
+
+
 end
