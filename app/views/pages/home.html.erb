@@ -2,30 +2,52 @@
   <div class="container">
     <h1>M-Coworking</h1>
     <h2>votre espace de <strong>coworking</strong> <strong>nature</strong> à Bordeaux dédié aux professionnels <strong>freelance</strong></h2>
-    <%= link_to "Je réserve !", "#", class: "btn btn-flat" %>
+
+    <% if current_user %>
+      <%= link_to "Je réserve !", user_path(current_user), class: "btn btn-flat"  %>
+    <% else %>
+      <%= link_to "Je réserve !", new_user_session_path, class: "btn btn-flat"  %>
+    <% end %>
+
   </div>
 </div>
 
 <div class="container">
+
   <h3>Un espace vert pour travailler en toute tranquilité</h3>
   <p>M-Coworking, est un espace de <strong>coworking</strong> dédié aux professionnels freelance. Situé en plein coeur de <strong>Bordeaux</strong>,
     M-Coworking assure à nos clients la meilleure configuration possible pour exercer en toute tranquilité au milieu des <strong>plantes</strong>.
     Nous mettons à disposition de <strong>nombreux services</strong> comme de la restauration bio et variée, un accès à des conférences
     et meetups afin de renforcer vos compétences et votre réseau freelance. Vous pouvez vous inscrire via ce site internet en créant un compte.</p>
+
+  <div class="d-flex justify-content-center">
+      <%= image_tag("worker", class: "col-4") %>
+      <%= image_tag("coworking", class: "col-4") %>
+      <%= image_tag("designer", class: "col-4") %>
+  </div>
+
   <h3>Comment réserver ?</h3>
   <p>Afin de pouvoir exercer dans un cadre agréable chez <strong>M-Coworking</strong>, il vous suffit de créer un compte sur ce site web. une fois que vous
   confirmé votre addresse mail, il vous sera possible de faire une demande de réservation en renseignant votre numéro de téléphone et une description de
   votre profil. Vous serez alors recontactés dès qu'une place sera disponible.</p>
-  <% if current_user %>
-    <%= link_to "Je réserve !", user_path(current_user), class: "btn btn-flat"  %>
-  <% else %>
-    <%= link_to "Je réserve !", new_user_session_path, class: "btn btn-flat"  %>
-  <% end %>
+
+  <div class="d-flex justify-content-center">
+    <% if current_user %>
+      <%= link_to "Je réserve !", user_path(current_user), class: "btn btn-flat"  %>
+    <% else %>
+      <%= link_to "Je réserve !", new_user_session_path, class: "btn btn-flat"  %>
+    <% end %>
+  </div>
+
   <h3>Où Sommes-nous ?</h3>
   <p>Face aux parkings des Quinconces, à proximité du Tram/Bus/Vcub/BatCub et du centre-ville, le M-Coworking Bordeaux vous garantit un accès
   rapide et facile sur le site pour vous et vos clients.</p>
+  <p>7 Allées de Chartres<br>
+  33000 Bordeaux</p>
+
   <div id="map"
-       style="width: 100%; height: 600px;"
-       data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
+       style="width: 100%; height: 400px;"
+       data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+  </div>
 </div>
 

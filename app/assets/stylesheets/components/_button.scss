@@ -16,13 +16,13 @@
   color: white;
   padding: 8px 24px;
   border-radius: 4px;
-  background: #1EDD88;
+  background: #3E8685;
   transition: background 0.3s ease;
   margin-top: 16px;
 }
 
 .btn-flat:hover {
-  background: #3E8685;
+  background: $black;
   color: white;
 }
 
