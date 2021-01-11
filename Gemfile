@@ -31,6 +31,10 @@ gem 'bootsnap', '>= 1.4.2', require: false
 gem 'devise'
 gem "letter_opener", :group => :development
 
+gem 'sidekiq'
+gem 'sidekiq-failures', '~> 1.0'
+
+
 gem 'autoprefixer-rails'
 gem 'font-awesome-sass'
 gem 'simple_form'
