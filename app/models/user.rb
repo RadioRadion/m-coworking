@@ -9,7 +9,7 @@ class User < ApplicationRecord
   validates :biography, length: { maximum: 300 }
 
   def after_confirmation
-    ContactMailer.contact(self).deliver_now
+    ReconfirmedMailJob.set(wait: 1.second).perform_later
   end
 
 
