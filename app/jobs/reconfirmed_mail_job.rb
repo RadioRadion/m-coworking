@@ -4,7 +4,7 @@ class ReconfirmedMailJob < ApplicationJob
   def perform(*args)
     puts "I'm starting the fake job"
     sleep 3
-    users = User.where("created_at < ?", Time.now)
+    users = User.User.where("created_at < ?", Time.now)
     p users
     users.each do |user|
       user.send_confirmation_instructions
