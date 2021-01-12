@@ -18,5 +18,5 @@ class UsersController < ApplicationController
     else
       Request.create!(statut: "confirmed", user: user)
     end
-
+  end
 end
