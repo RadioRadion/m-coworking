@@ -20,7 +20,7 @@ Rails.application.configure do
   :address        => ENV['MAILGUN_SMTP_SERVER'],
   :user_name      => ENV['MAILGUN_SMTP_LOGIN'],
   :password       => ENV['MAILGUN_SMTP_PASSWORD'],
-  :domain         => 'https://mcoworking.herokuapp.com/',
+  :domain         => 'sandboxa67ff7193b8443bda9e3186c086f0ed4.mailgun.org',
   :authentication => :plain,
 }
   ActionMailer::Base.delivery_method = :smtp
