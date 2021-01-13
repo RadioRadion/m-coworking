@@ -12,5 +12,10 @@ class User < ApplicationRecord
     ReconfirmedMailJob.set(wait: 1.second).perform_later
   end
 
+  def rank
+    waiting_list = Request.where(statut: "confirmed").map { |request| request.user_id}
+    waiting_list.include?(self.id) ? waiting_list.find_index {|user| user == self.id}.to_i + 1 : "Cet utilisateur 'n'est pas sur la liste d'attente"
+  end
+
 
 end

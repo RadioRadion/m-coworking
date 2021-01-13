@@ -12,7 +12,7 @@
     <ul class="navbar-nav mr-auto">
       <% if user_signed_in? %>
         <li class="nav-item active">
-          <%= link_to "M-Coworking", "#", class: "nav-link" %>
+          <%= link_to "M-Coworking", root_path, class: "nav-link" %>
         </li>
         <li class="nav-item">
           <%= link_to "Ma réservation", user_path(current_user), class: "nav-link" %>

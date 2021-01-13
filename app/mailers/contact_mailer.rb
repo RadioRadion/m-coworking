@@ -1,7 +1,8 @@
 class ContactMailer < ApplicationMailer
 
-  def contact(user)
-    mail(to: 'valentin.lassartesse@gmail.com', subject: "user.first_name")
+  def reconfirm(user)
+    @user = user
+    mail(to: user.email, subject: "Reconfirmez votre addresse mail")
   end
 
 end
