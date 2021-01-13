@@ -8,6 +8,7 @@ puts 'Creating users...'
 user = User.new(email: "tony@gromail.com", password: "azertie", first_name: "Patrick",
   last_name: "Fiori", biography: "Voici ma vie", phone_number: "0632469163")
 user.confirm
+user.skip_confirmation!
 user.save!
 old_date = Time.now - 4.months
 user.update!(confirmed_at: old_date)
@@ -16,17 +17,24 @@ user.update!(confirmed_at: old_date)
 user2 = User.new(email: "vito@gromail.com", password: "azertie", first_name: "Garou",
   last_name: "Fiori", biography: "Voici ma vie", phone_number: "0632469163")
 user2.confirm
-user.save!
+user2.skip_confirmation!
+user2.save!
 old_date2 = Time.now - 2.weeks
 user2.update!(confirmed_at: nil, confirmation_sent_at: old_date2)
 
 
-user3 = User.create!(email: "mario@gromail.com", password: "azertie", first_name: "Jennifer",
+user3 = User.new(email: "mario@gromail.com", password: "azertie", first_name: "Jennifer",
   last_name: "Fiori", biography: "Voici ma vie", phone_number: "0632469163")
-user4 = User.create!(email: "luigi@gromail.com", password: "azertie", first_name: "Jean-Pascal",
+user3.skip_confirmation!
+user3.save!
+user4 = User.new(email: "luigi@gromail.com", password: "azertie", first_name: "Jean-Pascal",
   last_name: "Fiori", biography: "Voici ma vie", phone_number: "0632469163")
-user5 = User.create!(email: "panzani@gromail.com", password: "azertie", first_name: "Patrick",
+user4.skip_confirmation!
+user4.save!
+user5 = User.new(email: "panzani@gromail.com", password: "azertie", first_name: "Patrick",
   last_name: "Fiori", biography: "Voici ma vie", phone_number: "0632469163")
+user5.skip_confirmation!
+user5.save!
 # file = URI.open('https://tel.img.pmdstatic.net/fit/https.3A.2F.2Fprd2-tel-epg-img.2Es3-eu-west-1.2Eamazonaws.2Ecom.2FproviderPerson.2Fa4d2c5f0980e06f80.2Ejpeg/300x300/quality/80/patrick-fiori.jpeg')
 # user.photo.attach(io: file, filename: 'fiori.jpg', content_type: 'image/jpg')
 
