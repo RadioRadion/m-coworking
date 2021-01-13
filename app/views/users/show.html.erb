@@ -20,9 +20,9 @@
         <%= f.input :phone_number, :label => "Numéro de téléphone" %>
         <%= f.input :biography, :label => "Petite biographie"  %>
         <% if current_user.request %>
-          <%= f.button :submit, "actualiser ma demande !", class: 'btn-flat' %>
+          <%= f.button :submit, "actualiser ma demande !", class: 'btn btn-flat' %>
         <% else %>
-          <%= f.button :submit, "faire une demande !", class: 'btn-flat'  %>
+          <%= f.button :submit, "faire une demande !", class: 'btn btn-flat' %>
         <% end %>
       <% end %>
 
