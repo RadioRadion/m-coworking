@@ -14,7 +14,7 @@ old_date = Time.now - 4.months
 user.update!(confirmed_at: old_date)
 
 #Ce user rempli les conditions nécessaires pour tester user:check_expired en dev et en prod
-user2 = User.new(email: "vito@gromail.com", password: "azertie", first_name: "Garou",
+user2 = User.new(email: "vito@gromail.com", password: "azertie", first_name: "Vito",
   last_name: "Fiori", biography: "Voici ma vie", phone_number: "0632469163")
 user2.confirm
 user2.skip_confirmation!
@@ -23,15 +23,15 @@ old_date2 = Time.now - 2.weeks
 user2.update!(confirmed_at: nil, confirmation_sent_at: old_date2)
 
 
-user3 = User.new(email: "mario@gromail.com", password: "azertie", first_name: "Jennifer",
+user3 = User.new(email: "mario@gromail.com", password: "azertie", first_name: "Mario",
   last_name: "Fiori", biography: "Voici ma vie", phone_number: "0632469163")
 user3.skip_confirmation!
 user3.save!
-user4 = User.new(email: "luigi@gromail.com", password: "azertie", first_name: "Jean-Pascal",
+user4 = User.new(email: "luigi@gromail.com", password: "azertie", first_name: "Luigi",
   last_name: "Fiori", biography: "Voici ma vie", phone_number: "0632469163")
 user4.skip_confirmation!
 user4.save!
-user5 = User.new(email: "panzani@gromail.com", password: "azertie", first_name: "Patrick",
+user5 = User.new(email: "panzani@gromail.com", password: "azertie", first_name: "Panzani",
   last_name: "Fiori", biography: "Voici ma vie", phone_number: "0632469163")
 user5.skip_confirmation!
 user5.save!
