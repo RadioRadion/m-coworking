@@ -14,9 +14,10 @@ class UsersController < ApplicationController
 
   def create_request(user)
     if user.request
-      redirect_to user_path(user), notice: "Infos changed"
+      redirect_to user_path(user), notice: "Informations modifées"
     else
       Request.create!(statut: "confirmed", user: user)
+      redirect_to user_path(user), notice: "Nous avons bien pris en compte votre demande"
     end
   end
 end

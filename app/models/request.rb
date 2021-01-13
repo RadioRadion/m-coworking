@@ -3,24 +3,14 @@ class Request < ApplicationRecord
 
   validates :statut, inclusion: {in: ["confirmed", "accepted", "expired"]}
 
+  scope :unconfirmed, -> { where(statut: nil) }
+  scope :confirmed, -> { where(statut: "confirmed") }
+  scope :accepted, -> { where(statut: "accepted") }
+  scope :expired, -> { where(statut: "expired") }
+
   def self.accept!(request)
     request.statut = 'accepted'
     request.save!
   end
 
-  def self.unconfirmed
-    Request.where(statut: nil)
-  end
-
-  def self.confirmed
-    Request.where(statut: "confirmed")
-  end
-
-  def self.accepted
-    Request.where(statut: "accepted")
-  end
-
-  def self.expired
-    Request.where(statut: "expired")
-  end
 end
