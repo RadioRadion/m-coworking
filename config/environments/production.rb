@@ -1,5 +1,5 @@
 Rails.application.configure do
-  config.action_mailer.default_url_options = { host: "sandboxa67ff7193b8443bda9e3186c086f0ed4.mailgun.org" }
+  config.action_mailer.default_url_options = { host: "https://mcoworking.herokuapp.com" }
   # Settings specified here will take precedence over those in config/application.rb.
 
   # Code is not reloaded between requests.
