@@ -3,15 +3,15 @@
 
       <p>Bienvenue <%= @email %>!</p>
 
-
-        <p> Vous êtes actuellement à la position sur la liste d'attente.
+      <% if @resource.request %>
+        <p> Vous êtes actuellement à la position <%= @resource.rank %> sur la liste d'attente.
 
         <p>Pour garder votre place et confirmer votre demande d'accès à M-Coworking, vous devez confirmer votre e-mail en cliquant sur
         le lien ci-dessous. Cette étape est nécessaire tous les trois mois afin de maintenir votre demande</p>
 
         <p>(sans confirmation de votre part, nous serons contraints de retirer votre candidature après une semaine de délai,
         merci de votre compréhension)</p>
-
+      <% else %>
 
         <p>Pour réserver votre place dans M-Coworking, vous devez confirmer votre e-mail en cliquant sur
         le lien ci-dessous. Cette étape est nécessaire tous les trois mois afin de maintenir votre demande</p>
@@ -20,7 +20,7 @@
 
         <p><%= link_to 'Je confirme mon compte', confirmation_url(@resource, confirmation_token: @token) %></p>
 
-
+      <% end %>
 
       <%= image_tag("worker.png", class: "col-4") %>
       <%= image_tag("coworking.png", class: "col-4") %>
