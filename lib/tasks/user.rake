@@ -11,6 +11,7 @@ namespace :user do
         new_token = SecureRandom.urlsafe_base64.to_s
         user.update!(confirmation_token: new_token, confirmed_at: nil, confirmation_sent_at: Time.now)
         user.send_confirmation_instructions
+        puts "------------------NEW USER TO RECONFIRM---------------------"
       end
     end
   end
@@ -24,6 +25,7 @@ namespace :user do
       request_expired = user.request && user.request.statut == "confirmed" && user.confirmed_at.nil? && checking_time_expired > user.confirmation_sent_at
       if request_expired
         user.request.update!(statut: "expired")
+        puts "------------------NEW QUEST TO EXPIRED---------------------"
       end
     end
   end
