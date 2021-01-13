@@ -25,7 +25,7 @@ namespace :user do
       request_expired = user.request && user.request.statut == "confirmed" && user.confirmed_at.nil? && checking_time_expired > user.confirmation_sent_at
       if request_expired
         user.request.update!(statut: "expired")
-        puts "------------------NEW QUEST TO EXPIRED---------------------"
+        puts "------------------NEW REQUEST TO EXPIRED---------------------"
       end
     end
   end
