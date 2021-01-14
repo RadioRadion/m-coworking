@@ -2,8 +2,10 @@ Request.destroy_all
 User.destroy_all
 
 puts 'Creating admin...'
-User.create!(email: "carlita@gmail.com", password: "azertie", first_name: "Carlita",
+admin = User.new(email: "carlita@gmail.com", password: "azertie", first_name: "Carlita",
   last_name: "Fiori", biography: "Voici ma vie, admin en plus", phone_number: "0632469163", admin: true)
+admin.skip_confirmation!
+admin.save!
 
 puts 'Creating users...'
 
