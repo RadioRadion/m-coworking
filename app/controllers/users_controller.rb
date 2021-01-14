@@ -6,6 +6,10 @@ class UsersController < ApplicationController
     create_request(@user)
   end
 
+  def show
+
+  end
+
   private
 
   def user_params

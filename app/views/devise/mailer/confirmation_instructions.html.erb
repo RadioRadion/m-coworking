@@ -1,30 +1,67 @@
 <div class="container">
-   <div class="d-flex justify-content-center">
 
-      <p>Bonjour <%= @email %>!</p>
+  <img id="logo" src="https://mcoworking.herokuapp.com/assets/logo-app-96-8df8af71f2ca9b3a0e849662bfe5dc4b8997e4e006d7398be1e403cb23686147.png" alt="designer" class="col-4">
 
-      <% if @resource.request %>
-        <p> Vous êtes actuellement à la position <%= @resource.rank %> sur la liste d'attente.
+  <p>Bonjour <strong><%= @email %></strong>!</p>
 
-        <p>Pour garder votre place et confirmer votre demande d'accès à M-Coworking, vous devez confirmer votre e-mail en cliquant sur
-        le lien ci-dessous. Cette étape est nécessaire tous les trois mois afin de maintenir votre demande</p>
+  <% if @resource.request %>
+    <p> Vous êtes actuellement à la position <%= @resource.rank %> sur la liste d'attente.
 
-        <p>(sans confirmation de votre part, nous serons contraints de retirer votre candidature après une semaine de délai,
-        merci de votre compréhension)</p>
-      <% else %>
+    <p>Pour garder votre place et confirmer votre demande d'accès à <strong>M-Coworking</strong>, vous devez confirmer votre e-mail en cliquant sur
+    le lien ci-dessous. Cette étape est nécessaire tous les trois mois afin de maintenir votre demande</p>
 
-        <p>Bonjour. Pour réserver votre place dans M-Coworking, vous devez confirmer votre e-mail en cliquant sur
-        le lien ci-dessous. Cette étape est nécessaire tous les trois mois afin de maintenir votre demande</p>
+    <p>(sans confirmation de votre part, nous serons contraints de retirer votre candidature après une semaine de délai,
+    merci de votre compréhension)</p>
+  <% else %>
 
-        <p>(sans confirmation de votre part, vous ne pourrez pas vous inscrire sur notre liste)</p>
+    <p>Bonjour. Pour réserver votre place dans M-Coworking, vous devez confirmer votre e-mail en cliquant sur
+    le lien ci-dessous. Cette étape est nécessaire tous les trois mois afin de maintenir votre demande</p>
 
-      <% end %>
+    <p>(sans confirmation de votre part, vous ne pourrez pas vous inscrire sur notre liste)</p>
 
-        <p><%= link_to 'Je confirme mon compte', confirmation_url(@resource, confirmation_token: @token), class: 'btn btn-flat' %></p>
+  <% end %>
 
-      <%= image_tag("worker.png", class: "col-4") %>
-      <%= image_tag("coworking.png", class: "col-4") %>
-      <%= image_tag("designer.png", class: "col-4") %>
-
+    <p><%= link_to 'Je confirme mon compte', confirmation_url(@resource, confirmation_token: @token), class: 'btn-flat' %></p>
+    <div class="row">
+      <img src="https://mcoworking.herokuapp.com/assets/worker-4fd485387169ee78938c304f62d7218ff5c70f5ed6de1e36b6d528c4ca2c3b32.png" alt="designer" class="col-4">
+      <img src="https://mcoworking.herokuapp.com/assets/coworking-9c8f725965e277e70675314ca06d7c21cd0adbf319b22925e60296ca064abfd6.png" alt="coworking" class="col-4">
+      <img src="https://mcoworking.herokuapp.com/assets/designer-a5ac385e30450a1d1e4c66af2421828c0d1599b52c56035ac3b99692b79a11f7.png" alt="worker" class="col-4">
     </div>
+
+    <%= link_to "www.m-coworking.fr", "https://mcoworking.herokuapp.com/", id: "link" %>
+
 </div>
+
+<style>
+.col-4 {
+  width: 30%;
+}
+
+.btn-flat {
+  color: white;
+  padding: 8px 24px;
+  border-radius: 4px;
+  background: #3E8685;
+  transition: background 0.3s ease;
+  margin-top: 42px;
+  margin-bottom: 42px;
+  text-decoration: none;
+}
+
+.btn-flat:hover {
+  background: $black;
+  color: white;
+}
+
+.container {
+  width: 700px;
+  margin: 0 auto;
+  text-align: center;
+}
+#logo {
+  width: 40px;
+}
+#link {
+  text-decoration: none;
+}
+</style>

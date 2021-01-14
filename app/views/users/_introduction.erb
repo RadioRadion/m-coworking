@@ -1,0 +1,10 @@
+<% if current_user.request.nil? %>
+  <h3>Veuillez compléter les information suivante pour pouvoir réserver une place chez nous. Nous vous contacterons dès
+  qu'une place sera disponible et que ce sera votre tour.</h3>
+<% elsif current_user.request.statut == "confirmed" %>
+  <h3>Demande de réservation <strong>confirmée</strong> ! Nous vous contacterons dès qu'une place sera disponible pour vous.</h3>
+<% elsif current_user.request.statut == "expired" %>
+  <h3>Demande de réservation <strong>expirée</strong> ! Veuillez reprendre contact avec nous si vous souhaitez vous inscrire à nouveau.</h3>
+<% else %>
+  <h3>Votre place est <strong>disponible</strong>, veuillez prendre contact avec nous pour les modalités.</h3>
+<% end %>
