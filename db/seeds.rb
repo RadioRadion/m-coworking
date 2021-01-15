@@ -45,8 +45,33 @@ user5.save!
 
 puts 'Creating request...'
 
-Request.create!(user: user, statut: "confirmed")
-Request.create!(user: user2, statut: "confirmed")
-Request.create!(user: user3, statut: "confirmed")
-Request.create!(user: user4, statut: "expired")
-Request.create!(user: user5, statut: "accepted")
+Request.create!(statut: "confirmed",
+        user: user, email: user.email,
+        biography: user.biography,
+        phone_number: user.phone_number,
+        first_name: user.first_name,
+        last_name: user.last_name)
+Request.create!(statut: "confirmed",
+        user: user2, email: user2.email,
+        biography: user2.biography,
+        phone_number: user2.phone_number,
+        first_name: user2.first_name,
+        last_name: user2.last_name)
+Request.create!(statut: "confirmed",
+        user: user3, email: user3.email,
+        biography: user3.biography,
+        phone_number: user3.phone_number,
+        first_name: user3.first_name,
+        last_name: user3.last_name)
+Request.create!(statut: "expired",
+        user: user4, email: user4.email,
+        biography: user4.biography,
+        phone_number: user4.phone_number,
+        first_name: user4.first_name,
+        last_name: user4.last_name)
+Request.create!(statut: "accepted",
+        user: user5, email: user5.email,
+        biography: user5.biography,
+        phone_number: user5.phone_number,
+        first_name: user5.first_name,
+        last_name: user5.last_name)
