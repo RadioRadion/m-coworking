@@ -19,13 +19,12 @@
       <% if current_user.confirmed_at %>
       <%= render "users/form" %>
 
-    </div>
-  </div>
-
       <% else %>
         <p>Vous n'avez pas confirmé votre addresse mail. Cette opération est nécessaire avant de pouvoir vous inscrire.</p>
-        <%= link_to "Renvoyez le mail de confirmation", new_user_confirmation_path, class: "btn btn-flat" %>
+        <%= link_to "Renvoyez le mail de confirmation", new_user_confirmation_path, class: "btn btn-flat btn-space", id: "space-button" %>
       <% end %>
+    </div>
+  </div>
 
 </div>
 

@@ -6,8 +6,13 @@ user = User.new(email: "vito@gromail.com", password: "azertie", first_name: "Vit
 RSpec.describe Request, type: :model do
 
   subject {
-    described_class.new(user: user,
-                        statut: "confirmed")
+    described_class.new(statut: "confirmed",
+        user: user,
+        email: user.email,
+        biography: user.biography,
+        phone_number: user.phone_number,
+        first_name: user.first_name,
+        last_name: user.last_name)
   }
 
   describe "Validations" do
@@ -28,6 +33,26 @@ RSpec.describe Request, type: :model do
     end
     it "is not valid without a statut" do
       subject.statut = nil
+      expect(subject).to_not be_valid
+    end
+    it "is not valid without a email" do
+      subject.email = nil
+      expect(subject).to_not be_valid
+    end
+    it "is not valid without a first_name" do
+      subject.first_name = nil
+      expect(subject).to_not be_valid
+    end
+    it "is not valid without a last_name" do
+      subject.last_name = nil
+      expect(subject).to_not be_valid
+    end
+    it "is not valid without a biography" do
+      subject.biography = nil
+      expect(subject).to_not be_valid
+    end
+    it "is not valid without a phone_number" do
+      subject.phone_number = nil
       expect(subject).to_not be_valid
     end
     it "is not valid with a wrong statut" do
