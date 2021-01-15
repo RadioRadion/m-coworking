@@ -10,7 +10,7 @@ admin.save!
 puts 'Creating users...'
 
 #Ce user rempli les conditions nécessaires pour tester user:check_reconfirm en dev et en prod
-user = User.new(email: "tony@gromail", password: "azertie", first_name: "Tony",
+user = User.new(email: "tony@gromail.com", password: "azertie", first_name: "Tony",
   last_name: "Fiori", biography: "Voici ma vie", phone_number: "0632469163")
 user.confirm
 user.skip_confirmation!
