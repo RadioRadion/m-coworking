@@ -3,7 +3,6 @@ namespace :user do
   desc "send a reconfirm mail every 3 months"
   task check_reconfirm: :environment do
     users = User.all
-    puts "Enqueuing update of #{users.size} users..."
     checking_time_confirmed = Time.now - 3.months
     users.each do |user|
       user_have_to_reconfirm = !user.confirmed_at.nil? && checking_time_confirmed > user.confirmed_at
@@ -19,7 +18,6 @@ namespace :user do
   desc "check expired request"
   task check_expired: :environment do
     users = User.all
-    puts "Enqueuing update of #{users.size} users..."
     checking_time_expired = Time.now - 1.week
     users.each do |user|
       request_expired = user.request && user.request.statut == "confirmed" && user.confirmed_at.nil? && checking_time_expired > user.confirmation_sent_at

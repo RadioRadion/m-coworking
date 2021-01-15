@@ -19,9 +19,9 @@ module MCoworking
 
     config.active_job.queue_adapter = :sidekiq
 
-    I18n.enforce_available_locales = false
-    config.i18n.default_locale = :fr
-    I18n.locale = :fr
+    # I18n.enforce_available_locales = false
+    # config.i18n.default_locale = :fr
+    # I18n.locale = :fr
 
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration can go into files in config/initializers
