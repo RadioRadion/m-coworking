@@ -2,7 +2,7 @@ Request.destroy_all
 User.destroy_all
 
 puts 'Creating admin...'
-admin = User.new(email: "carlita@gmail.com", password: "azertie", first_name: "Carlita",
+admin = User.new(email: "carlita@gromail.com", password: "azertie", first_name: "Carlita",
   last_name: "Fiori", biography: "Voici ma vie, admin en plus", phone_number: "0632469163", admin: true)
 admin.skip_confirmation!
 admin.save!
@@ -10,7 +10,7 @@ admin.save!
 puts 'Creating users...'
 
 #Ce user rempli les conditions nécessaires pour tester user:check_reconfirm en dev et en prod
-user = User.new(email: "valentin.lassartesse@gmail.com", password: "azertie", first_name: "Patrick",
+user = User.new(email: "tony@gromail", password: "azertie", first_name: "Tony",
   last_name: "Fiori", biography: "Voici ma vie", phone_number: "0632469163")
 user.confirm
 user.skip_confirmation!
